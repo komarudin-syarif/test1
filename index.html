@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Saya - Portfolio & Kontak</title>
+  <style>
+    /* Reset & CSS Variables */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --primary-color: #3b82f6;
+      --primary-hover: #2563eb;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    /* Grid layout untuk layar sedang & besar */
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: 350px 1fr;
+      }
+    }
+
+    /* Card styling */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Profile Sidebar */
+    .profile-sidebar {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 4px solid var(--primary-color);
+    }
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .profile-title {
+      color: var(--primary-color);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .bio {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+    }
+    .skill-tag {
+      background: #eff6ff;
+      color: var(--primary-color);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Section Main Content */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .about-section {
+      margin-bottom: 24px;
+    }
+
+    /* Form Styling */
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Status pesan */
+    .status-msg {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .status-msg.success {
+      display: block;
+      background: #dcfce7;
+      color: #15803d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar / Kartu Profil -->
+    <aside class="card profile-sidebar">
+      <img src="https://via.placeholder.com/150" alt="Foto Profil" class="avatar" />
+      <h1 class="profile-name">Alex Pratama</h1>
+      <p class="profile-title">Web Developer & Designer</p>
+      <p class="bio">
+        Pengembang web yang berdedikasi menciptakan pengalaman digital yang bersih, responsif, dan mudah digunakan.
+      </p>
+      <div class="skills">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">UI/UX</span>
+      </div>
+    </aside>
+
+    <!-- Konten Utama: Tentangnya & Formulir Kontak -->
+    <main class="card">
+      <section class="about-section">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p>
+          Halo! Saya memiliki pengalaman lebih dari 3 tahun dalam merancang dan memprogram aplikasi web modern. Fokus utama saya adalah membuat antarmuka pengguna yang menarik sekaligus fungsional di berbagai ukuran layar.
+        </p>
+      </section>
+
+      <section class="contact-section">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="nama@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" class="form-control" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Kirim Pesan</button>
+          <div id="statusMsg" class="status-msg"></div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const statusMsg = document.getElementById('statusMsg');
+
+      // Simulasi pengiriman formulir
+      statusMsg.className = 'status-msg success';
+      statusMsg.textContent = `Terima kasih, ${name}! Pesan Anda berhasil terkirim (Simulasi).`;
+      
+      // Reset form setelah dikirim
+      this.reset();
+    });
+  </script>
+</body>
+</html>
