@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Halaman profil pribadi Farzan dengan HTML, CSS responsif, dan formulir kontak.">
+  <title>Profil Farzan | Portofolio Pribadi</title>
+  <style>
+    :root{--bg:#f5f7fb;--ink:#18243a;--muted:#56657a;--brand:#3158c9;--line:#dce3ef;--card:#fff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+    a{color:var(--brand)}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f3ae4a;outline-offset:3px}
+    .container{width:min(100% - 36px,1040px);margin:auto}.site-header{background:#fff;border-bottom:1px solid var(--line)}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:76px}.logo{font-size:1.25rem;font-weight:800;text-decoration:none;color:var(--ink)}
+    nav ul{display:flex;flex-wrap:wrap;gap:22px;list-style:none;padding:0;margin:0}nav a{text-decoration:none;font-weight:600}
+    .hero{padding:82px 0 66px;background:linear-gradient(125deg,#eaf0ff,#f8fbff)}.eyebrow{color:var(--brand);font-weight:750;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+    h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.13;margin:12px 0}h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.25;margin:0 0 20px}.lead{font-size:1.12rem;max-width:650px;color:var(--muted)}
+    .button{display:inline-block;border:0;border-radius:10px;background:var(--brand);color:white;padding:12px 21px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}.button:hover{background:#2445a5}
+    section.content{padding:54px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 10px 24px #192b5010}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.skill{padding:18px;border:1px solid var(--line);border-radius:12px;background:#fafcff}.skill h3{margin:0 0 8px}.skill p{margin:0;color:var(--muted)}
+    form{max-width:680px}.field{margin-bottom:18px}label{display:block;font-weight:700;margin-bottom:6px}input,textarea{width:100%;border:1px solid #aebbd0;border-radius:9px;padding:12px 13px;font:inherit;background:#fff;color:var(--ink)}textarea{resize:vertical;min-height:135px}.hint{color:var(--muted);font-size:.9rem}.status{margin-top:16px;font-weight:650}.status[hidden]{display:none}.footer{padding:24px 0;background:#18243a;color:#fff;text-align:center}
+    @media(max-width:700px){.header-inner{align-items:flex-start;flex-direction:column;padding:16px 0}nav ul{gap:12px 20px}.hero{padding:54px 0}.grid{grid-template-columns:1fr}.card{padding:20px}section.content{padding:36px 0}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#beranda">Farzan • Profil</a>
+      <nav aria-label="Navigasi utama"><ul><li><a href="#tentang">Tentang</a></li><li><a href="#keahlian">Keahlian</a></li><li><a href="#kontak">Kontak</a></li></ul></nav>
+    </div>
+  </header>
+  <main id="beranda">
+    <section class="hero" aria-labelledby="judul-utama"><div class="container">
+      <p class="eyebrow">Halo, selamat datang!</p><h1 id="judul-utama">Saya Farzan.</h1>
+      <p class="lead">Saya sedang belajar pengembangan web. Halaman ini merupakan latihan membuat struktur HTML semantik, tampilan CSS responsif, dan formulir kontak dengan validasi dasar.</p>
+      <a class="button" href="#kontak">Hubungi Saya</a>
+    </div></section>
+    <section class="content" id="tentang" aria-labelledby="judul-tentang"><div class="container"><article class="card"><h2 id="judul-tentang">Tentang Saya</h2>
+      <p>Saya tertarik mempelajari cara membangun website yang rapi, mudah digunakan, dan dapat dibuka melalui komputer maupun ponsel.</p>
+      <p>Dalam proyek sederhana ini, saya berlatih menggunakan elemen semantik seperti <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, dan <code>footer</code>.</p>
+    </article></div></section>
+    <section class="content" id="keahlian" aria-labelledby="judul-keahlian"><div class="container"><h2 id="judul-keahlian">Yang Sedang Saya Pelajari</h2><div class="grid">
+      <article class="skill"><h3>HTML</h3><p>Menyusun konten dan struktur halaman secara semantik.</p></article>
+      <article class="skill"><h3>CSS</h3><p>Mengatur warna, tata letak, dan tampilan responsif.</p></article>
+      <article class="skill"><h3>Formulir Web</h3><p>Membuat input dan memvalidasi data dasar dari pengguna.</p></article>
+    </div></div></section>
+    <section class="content" id="kontak" aria-labelledby="judul-kontak"><div class="container"><div class="card"><h2 id="judul-kontak">Formulir Kontak</h2>
+      <p>Silakan isi formulir berikut. Ini adalah demonstrasi validasi sisi klien; pesan <strong>tidak dikirim ke server</strong>.</p>
+      <form id="contact-form" novalidate>
+        <div class="field"><label for="nama">Nama lengkap</label><input id="nama" name="nama" type="text" autocomplete="name" minlength="2" maxlength="80" required placeholder="Masukkan nama Anda"></div>
+        <div class="field"><label for="email">Alamat email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="nama@contoh.com"></div>
+        <div class="field"><label for="pesan">Pesan</label><textarea id="pesan" name="pesan" minlength="10" maxlength="1000" required placeholder="Tulis pesan minimal 10 karakter"></textarea><p class="hint">Minimal 10 karakter.</p></div>
+        <button class="button" type="submit">Periksa Pesan</button><p id="form-status" class="status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div></div></section>
+  </main>
+  <footer class="footer"><div class="container"><small>&copy; <span id="year">2026</span> Farzan. Proyek latihan HTML &amp; CSS.</small></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      status.hidden = false;
+      if (!form.checkValidity()) {
+        status.textContent = 'Mohon periksa kembali isian formulir. Nama minimal 2 karakter, email harus valid, dan pesan minimal 10 karakter.';
+        status.style.color = '#ad3333';
+        form.reportValidity();
+        return;
+      }
+      status.textContent = 'Validasi berhasil! Ini hanya simulasi: pesan belum dikirim karena tidak ada layanan backend.';
+      status.style.color = '#18734c';
+    });
+  </script>
+</body>
+</html>
